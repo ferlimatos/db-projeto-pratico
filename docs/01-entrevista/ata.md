@@ -76,7 +76,9 @@ Cada viagem concluída deverá gerar um registro histórico contendo:
 - Cliente;
 - Origem e destino;
 - Distância percorrida;
-- Valor faturado;
+- Valor recebido
+- Valor desconto
+- Valor faturado
 - Tipo de pagamento;
 - Quantidade de viagens realizadas;
 - Descontos ou vouchers aplicados.
