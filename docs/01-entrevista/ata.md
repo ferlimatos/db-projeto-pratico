@@ -93,7 +93,7 @@ O sistema deverá possibilitar:
 - Controle do faturamento por veículo;
 - Identificação da forma de pagamento;
 - Aplicação de descontos;
-- Utilização de vouchers promocionais;
+- Utilização de vouchers promocionais que pode vir de terceiros para registros e prestação de contas.
 - Relatórios de faturamento diário, semanal e mensal.
 
 ### 7. Gestão de veículos
