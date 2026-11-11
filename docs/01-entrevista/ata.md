@@ -1,305 +1,124 @@
-Ata da Entrevista com o Cliente
-1. Informações gerais
-Data: Não informada.
-Participantes: Cliente e equipe de desenvolvimento.
-Projeto: Sistema de gerenciamento de viagens e motoristas.
-Objetivo: Compreender as necessidades do cliente, os processos do negócio, os dados que precisam ser armazenados e as funcionalidades esperadas para o sistema.
-2. Resumo por bloco
-2.1. Negócio e processos
+# Respostas da Entrevista com o Cliente
 
-O cliente deseja desenvolver um software simples, básico e de fácil utilização, semelhante a um aplicativo de transporte como Uber OTE.
-
-O sistema terá alcance global e será voltado principalmente para ajudar motoristas a controlar e registrar suas viagens, funcionando também como uma ferramenta de CRM (Customer Relationship Management).
-
-O cliente apresentou duas modalidades de início de viagem:
-
-Viagem por agendamento: A viagem é programada antecipadamente.
-Viagem imediata: A viagem é iniciada sem agendamento prévio. O cliente utilizou a expressão "viagem maçaneta", cujo significado precisa ser confirmado.
-
-O sistema deverá registrar informações sobre as viagens, como data, horário, local de embarque, local de desembarque e informações do passageiro.
-
-Atualmente, o negócio possui cinco carros disponíveis e pretende expandir suas atividades para o serviço de táxi.
-
-O sistema também poderá ser comercializado para motoristas particulares que não fazem parte da empresa, permitindo que utilizem a plataforma para controlar suas próprias viagens.
-
-2.2. Dados e informações que o sistema deverá armazenar
-
-Clientes e passageiros:
-
-Nome.
-Telefone.
-CPF.
-Local de embarque.
-Local de desembarque.
+## 1. Abertura e apresentação
 
-Motoristas e veículos:
+- **Qual é o seu negócio e a atividade que realiza atualmente?**  
+  O cliente atua no setor de transporte, com uma frota inicial de cinco veículos e pretende expandir as atividades para o serviço de táxi.
 
-Motorista responsável pela viagem.
-Placa do veículo.
-Cor do veículo.
-Modelo do veículo.
+- **Qual é o principal problema ou necessidade que levou você a procurar um sistema?**  
+  A necessidade de controlar e registrar as viagens realizadas pelos motoristas, organizar as ordens de serviço e acompanhar o faturamento de forma simples.
 
-Viagens:
+- **O que você espera que o sistema resolva?**  
+  O cliente espera que o sistema permita ao motorista ter controle das ordens de serviço que executa, registrar viagens, acompanhar faturamento e organizar o histórico operacional.
 
-Data de início.
-Horário.
-Origem.
-Destino.
-Quilometragem percorrida.
-Valor faturado.
-Ganho por quilômetro.
-Tipo de viagem (agendada ou imediata).
+- **Quem utilizará o sistema?**  
+  O sistema poderá ser utilizado por gestores e motoristas. Também poderá ser usado por motoristas autônomos que não fazem parte da empresa.
 
-O cadastro inicial deverá solicitar pelo menos nome e telefone.
+- **Existe prazo, orçamento ou prioridade para a primeira versão?**  
+  O cliente deseja uma solução de baixo custo, simples, básica e de fácil utilização. A prioridade é desenvolver um MVP funcional.
 
-2.3. Regras e funcionalidades identificadas
+- **Podemos registrar as informações desta conversa?**  
+  Sim. As informações foram registradas para orientar o levantamento de requisitos e o desenvolvimento do sistema.
 
-O sistema deverá contemplar:
+## 2. Contexto do negócio
 
-Controle das ordens de serviço (OS).
-Registro das viagens realizadas pelos motoristas.
-Controle da ordem de fila e disponibilidade dos motoristas.
-Registro de faturamento e ganhos por quilômetro.
-Oferecimento de vouchers e promoções.
-Suporte a diferentes formas de pagamento.
-Integração com Google Maps para consulta de trajetos e quilometragem.
-Recebimento de ordens de serviço provenientes do WhatsApp.
-Acesso pelo computador (desktop) e pelo celular.
-Baixo custo de utilização e manutenção.
-2.4. Relatórios e decisões gerenciais
+- **Quais tipos de transporte a empresa realiza?**  
+  A empresa realiza transporte de passageiros e pretende expandir para o serviço de táxi.
 
-O cliente demonstrou interesse em acompanhar o faturamento e os ganhos dos motoristas, principalmente considerando a quilometragem percorrida.
+- **A empresa atende apenas clientes próprios ou também motoristas autônomos?**  
+  O sistema poderá ser comercializado para motoristas particulares que não fazem parte da empresa.
 
-Também foi mencionada a necessidade de controlar as viagens realizadas, mas os relatórios específicos desejados ainda precisam ser definidos.
+- **Quantos veículos e motoristas existem hoje?**  
+  Atualmente, existem cinco carros disponíveis para operação.
 
-3. Citações importantes
+- **Quais tipos de veículos são utilizados?**  
+  O sistema deverá cadastrar modelo, placa e cor dos veículos.
 
-As seguintes frases foram registradas nas anotações da entrevista:
+- **A empresa pretende expandir para outros serviços?**  
+  Sim. O cliente mencionou a intenção de expandir para o serviço de táxi.
 
-"Software simples, básico, de fácil atendimento."
-"Parecido com a Uber OTE."
-"Alcance do aplicativo: o mundo inteiro."
-"Solução pro motorista ter o controle da ordem de serviço que executa."
-"É um aplicativo para ajudar o motorista a registrar suas viagens."
-"5 carros a pronto e quer expandir para o táxi."
-"Pode ser vendido pra um motorista que faz viagens particulares também e que não é da empresa."
-"A OS vem do WhatsApp."
-"Baixo custo."
-4. Decisões e requisitos identificados
+- **O sistema será usado apenas internamente ou também será comercializado?**  
+  O sistema poderá ser utilizado internamente pela empresa e também comercializado para motoristas autônomos.
 
-Com base no que foi apresentado pelo cliente, foram identificados os seguintes requisitos iniciais:
+- **Existe algum aplicativo, planilha ou sistema utilizado atualmente?**  
+  Não foi informado um sistema específico. O cliente mencionou que a solução deverá ser semelhante, em simplicidade, a aplicativos como Uber e 99, porém voltada ao controle interno das viagens.
 
-O sistema deverá permitir o cadastro de clientes e motoristas.
-O sistema deverá permitir o cadastro de veículos.
-O sistema deverá registrar viagens agendadas e imediatas.
-Cada viagem deverá possuir informações de origem, destino, data e horário.
-O sistema deverá permitir o controle das ordens de serviço.
-O sistema deverá registrar informações financeiras das viagens.
-O sistema deverá permitir o controle da disponibilidade dos motoristas.
-O sistema deverá oferecer suporte a vouchers e promoções.
-O sistema deverá permitir integração com Google Maps.
-O sistema deverá ser acessível por desktop e dispositivos móveis.
-O sistema deverá considerar tanto motoristas vinculados à empresa quanto motoristas particulares.
-O sistema deverá considerar a possibilidade de expansão para serviços de táxi.
-5. Pendências
-
-Algumas informações importantes não foram esclarecidas durante a entrevista:
-
-Definir exatamente o significado de "viagem maçaneta".
-Definir como funciona a distribuição das ordens de serviço entre os motoristas.
-Definir se o passageiro poderá solicitar viagens diretamente pelo aplicativo.
-Definir quais formas de pagamento serão efetivamente disponibilizadas.
-Definir como será realizado o controle de vouchers e promoções.
-Definir quais relatórios serão necessários.
-Definir se o sistema emitirá recibos, notas fiscais ou outros documentos.
-Definir quais informações serão obrigatórias no cadastro de clientes e motoristas.
-Definir como será realizada a integração com WhatsApp e Google Maps.
-6. Considerações finais
-
-A entrevista permitiu identificar que o principal objetivo do projeto é desenvolver um sistema de gerenciamento de viagens e ordens de serviço, oferecendo aos motoristas maior controle sobre suas atividades e permitindo acompanhar informações operacionais e financeiras.
-
-O sistema deverá priorizar simplicidade, baixo custo, acessibilidade e possibilidade de expansão.
-
-As pendências deverão ser esclarecidas com o cliente antes da definição definitiva do modelo conceitual e lógico do banco de dados.
-# BRIEFING DO SISTEMA
-## Plataforma de Controle de Viagens e Ordens de Serviço
-
-### 1. Objetivo do sistema
-
-Desenvolver uma plataforma de tecnologia para controle, registro, acompanhamento e supervisão das viagens realizadas por motoristas de transporte por aplicativo, utilizando exclusivamente o WhatsApp como canal de comunicação e registro das informações.
-
-O sistema deverá permitir que motoristas e gestores acompanhem as viagens, organizem o histórico operacional e controlem o faturamento de maneira simples e acessível.
-
-O conceito é oferecer uma ferramenta básica, funcional e de fácil entendimento, semelhante à simplicidade operacional de aplicativos como Uber e 99, porém direcionada ao controle interno das viagens.
-
-### 2. Cadastro e identificação
-
-O sistema deverá permitir o registro das seguintes informações:
-
-**Motorista**
-- Nome completo;
-- Telefone com código internacional;
-- Veículo utilizado;
-- Placa do veículo.
-
-**Cliente**
-- Nome;
-- Telefone;
-- Localização inicial;
-- Localização final.
-
-A busca de registros deverá ser realizada por nome ou número de telefone, tanto do motorista quanto do cliente.
-
-### 3. Modalidades de viagem
-
-O sistema deverá contemplar duas modalidades principais:
+- **Quais são as maiores dificuldades encontradas hoje?**  
+  A principal dificuldade é o controle das viagens, das ordens de serviço, do faturamento e das informações dos motoristas.
 
-**A. Agendamento**
-- Viagem previamente programada;
-- Data e horário definidos;
-- Local de embarque;
-- Local de desembarque;
-- Identificação do motorista e veículo;
-- Acompanhamento da ordem de serviço.
-
-**B. Maçaneta (atendimento imediato)**
-- Cliente se dirige diretamente ao veículo;
-- Registro simplificado da viagem;
-- Nome e telefone do cliente;
-- Localização inicial;
-- Localização final;
-- Motorista responsável.
-
-### 4. Ordens de Serviço (OS)
-
-O sistema deverá gerar uma Ordem de Serviço para cada viagem registrada.
+## 3. Processo atual das viagens
 
-A OS deverá conter:
-- Número identificador;
-- Data e horário;
-- Motorista responsável;
-- Dados do veículo;
-- Nome e telefone do cliente;
-- Local de embarque;
-- Local de desembarque;
-- Valor da viagem;
-- Tipo de pagamento;
-- Status da viagem.
+- **Como uma viagem é solicitada atualmente?**  
+  As ordens de serviço chegam principalmente pelo WhatsApp.
 
-O gestor deverá conseguir acompanhar e supervisionar as ordens de serviço em andamento, concluídas e canceladas.
+- **Quem recebe a solicitação?**  
+  O cliente não especificou claramente quem recebe a solicitação, mas o sistema deverá permitir que o gestor acompanhe e supervise as ordens de serviço.
 
-### 5. Histórico de viagens
+- **Por quais meios as solicitações chegam?**  
+  As ordens de serviço são recebidas pelo WhatsApp.
 
-Cada viagem concluída deverá gerar um registro histórico contendo:
+- **Como o motorista é escolhido para realizar cada viagem?**  
+  O cliente mencionou a integração com o Google Maps. Com base nessa informação, entende-se que o motorista mais próximo do cliente poderá ser indicado para realizar a viagem. Portanto, o sistema deverá considerar a localização dos motoristas disponíveis e a localização do cliente para sugerir ou selecionar o motorista mais próximo.  
 
-- Data e hora de início;
-- Data e hora de encerramento;
-- Motorista;
-- Veículo;
-- Cliente;
-- Origem e destino;
-- Distância percorrida;
-- Valor recebido
-- Valor desconto
-- Valor faturado
-- Tipo de pagamento;
-- Quantidade de viagens realizadas;
-- Descontos ou vouchers aplicados.
+- **Existe controle de fila, disponibilidade ou escala dos motoristas?**  
+  Sim. O sistema deverá controlar a ordem de fila e a disponibilidade dos motoristas.
 
-### 6. Gestão financeira
+- **Como é feito o acompanhamento da viagem em andamento?**  
+  O sistema deverá permitir o acompanhamento das ordens de serviço em andamento pelo gestor.
 
-O sistema deverá possibilitar:
+- **O que acontece quando uma viagem é cancelada?**  
+  O sistema deverá registrar o status da viagem, incluindo ordens de serviço canceladas.
 
-- Cálculo do preço por quilômetro rodado;
-- Registro do faturamento individual por viagem;
-- Controle do faturamento por motorista;
-- Controle do faturamento por veículo;
-- Identificação da forma de pagamento;
-- Aplicação de descontos;
-- Utilização de vouchers promocionais;
-- Relatórios de faturamento diário, semanal e mensal.
+- **Como são registrados os dados da viagem após o atendimento?**  
+  Cada viagem concluída deverá gerar um registro histórico com dados de início, encerramento, motorista, veículo, cliente, origem, destino, distância, valores e forma de pagamento.
 
-### 7. Gestão de veículos
+## 4. Modalidades de viagem
 
-A plataforma deverá permitir o cadastro e controle de uma frota inicial de 5 veículos disponíveis para operação.
+- **Quais são os tipos de viagem realizados?**  
+  O sistema deverá contemplar viagens agendadas e viagens imediatas.
 
-Cada veículo deverá possuir:
-- Modelo;
-- Placa;
-- Motorista vinculado;
-- Status de disponibilidade;
-- Histórico de viagens.
+- **O que significa “viagem maçaneta”?**  
+  “Viagem maçaneta” significa atendimento imediato. Nesse caso, o cliente se dirige diretamente ao veículo e a viagem é registrada de forma simplificada.
 
-O sistema deverá permitir a utilização dos veículos tanto para fins pessoais quanto para operações empresariais.
+- **Em uma viagem por agendamento, quais informações são informadas antecipadamente?**  
+  Devem ser informados data, horário, local de embarque, local de desembarque, motorista responsável e veículo utilizado.
 
-### 8. Perfis de acesso
+- **Em uma viagem imediata, quais informações são registradas?**  
+  Devem ser registrados nome e telefone do cliente, localização inicial, localização final e motorista responsável.
 
-O sistema deverá possuir dois modelos de utilização:
+- **O cliente pode solicitar a viagem diretamente pelo sistema?**  
+  Não há indicação de que o passageiro solicitará viagens diretamente pelo aplicativo. O WhatsApp será o canal principal de registro pelo motorista.
 
-**Modelo 1 — Gestor e Motorista**
-- Gestor supervisiona as viagens;
-- Gestor acompanha faturamento;
-- Gestor controla os veículos;
-- Motorista registra e acompanha suas viagens.
+- **Uma mesma viagem pode sofrer alterações?**  
+  O sistema deverá permitir o acompanhamento das ordens de serviço em andamento, concluídas e canceladas, mas as regras de alteração ainda precisam ser definidas.
 
-**Modelo 2 — Somente Motorista**
-- Uso individual;
-- Registro das próprias viagens;
-- Controle de faturamento;
-- Consulta ao histórico;
-- Sem necessidade de estrutura administrativa.
+- **Como é definido o valor da viagem?**  
+  O valor deverá considerar a quilometragem percorrida. O sistema deverá calcular o preço por quilômetro rodado.
 
-### 9. Interface e acessibilidade
+- **A viagem pode ter mais de um passageiro?**  
+  Não foi informado. Essa regra ainda precisa ser esclarecida.
 
-A plataforma deverá ser compatível com:
+## 5. Cadastros necessários
 
-- Smartphones Android;
-- Smartphones iOS;
-- Computadores desktop;
-- Navegadores modernos.
+- **Quais informações são necessárias sobre o cliente?**  
+  Nome, telefone, CPF, local de embarque e local de desembarque.
 
-A interface deverá priorizar:
-- Simplicidade;
-- Facilidade de navegação;
-- Poucos comandos;
-- Informações organizadas;
-- Operação rápida;
-- Layout responsivo.
+- **O CPF do cliente será obrigatório ou opcional?**  
+  O CPF foi mencionado como dado a ser armazenado, mas ainda não foi definido se será obrigatório.
 
-### 10. Integração com WhatsApp
+- **Quais informações são necessárias sobre o motorista?**  
+  Nome completo, telefone com código internacional, veículo utilizado e placa do veículo.
 
-O WhatsApp será o canal principal de interação com o sistema.
+- **O motorista terá acesso individual ao sistema?**  
+  Sim. O sistema deverá possuir perfis de acesso para gestor e motorista.
 
-O motorista deverá conseguir registrar as informações de uma viagem por meio de mensagens, sem precisar acessar constantemente uma plataforma externa.
+- **Quais informações sobre o veículo devem ser cadastradas?**  
+  Modelo, placa, cor, motorista vinculado, status de disponibilidade e histórico de viagens.
 
-O sistema deverá interpretar as informações recebidas, organizar os dados e gerar os registros correspondentes.
 
-### 11. Integração com Google Maps
+## Pendências
 
-Possibilidade de integração com Google Maps para:
-
-- Identificação dos endereços de embarque e desembarque;
-- Geolocalização dos pontos;
-- Cálculo de distância entre origem e destino;
-- Estimativa do preço da viagem com base na quilometragem;
-- Visualização de rotas;
-- Apoio ao cálculo do faturamento.
-
-### 12. Público-alvo
-
-A plataforma deverá ser desenvolvida para utilização internacional, com possibilidade de atender:
-
-- Motoristas de aplicativos;
-- Motoristas autônomos;
-- Pequenas empresas de transporte;
-- Empresas de mobilidade urbana;
-- Gestores de pequenas frotas;
-- Operadores de transporte executivo.
-
-### 13. Diretriz de desenvolvimento
-
-O sistema deverá ser desenvolvido inicialmente com foco em um MVP (Produto Mínimo Viável).
-
-A prioridade será garantir que o motorista consiga registrar suas viagens pelo WhatsApp e que o gestor consiga acompanhar, supervisionar e organizar as informações.
-
-A plataforma deverá possuir estrutura tecnológica preparada para expansão futura, incluindo novos recursos, integrações, relatórios e diferentes mercados internacionais.
+- Confirmar se o motorista mais próximo será selecionado automaticamente ou se o gestor fará a atribuição manual.
+- Definir se o passageiro poderá solicitar viagens diretamente pelo sistema.
+- Definir as regras de criação, validade e uso dos vouchers.
+- Definir se o sistema emitirá recibos, notas fiscais ou outros documentos.
