@@ -54,38 +54,57 @@ O cadastro inicial deverá solicitar pelo menos nome e telefone.
 #### Motoristas
 
 - Nome completo.
-- Telefone com código internacional.
-- Veículo utilizado.
-- Identificação das viagens realizadas.
-- Disponibilidade e posição na fila, conforme regras ainda a definir.
+- Telefone com código internacional (chave de busca e integração com WhatsApp).
+- Documento de identificação / CNH (obrigatoriedade a confirmar com o cliente).
+- Tipo de vínculo: frota própria ou motorista particular/autônomo.
+- Status do cadastro: ativo, inativo ou bloqueado.
 
 #### Veículos
 
+- Identificador único do veículo (ID_Veiculo).
 - Placa.
-- Modelo.
+- Modelo e marca.
 - Cor.
+- Proprietario: próprio (empresa) ou particular (motorista).
+- Status operacional do cadastro: ativo, em manutenção ou inativo.
+
+#### Alocação e Disponibilidade (Turno / Operação)
+Entidade que conecta Motoristas e Veículos, registrando o histórico de uso dos veículos por motorista e a disponibilidade/fila em tempo real.
+
+- Identificador único da alocação/turno.
 - Motorista vinculado.
-- Status de disponibilidade.
-- Histórico de viagens.
+- Veículo utilizado.
+- Finalidade do uso: empresarial (disponível para frota) ou pessoal (uso particular do veículo).
+- Data e horário de início do vínculo/turno.
+- Data e horário de encerramento do vínculo/turno (em aberto enquanto estiver ativo).
+- Status de disponibilidade em tempo real:
+  - Disponível (na fila)
+  - Em atendimento / Ocupado
+  - Em pausa / Indisponível
+  - Uso pessoal
+- Posição na fila (número sequencial ou registro de hora de entrada, conforme regras a definir).
 
 #### Viagens
 
+- Identificador único da viagem.
 - Modalidade: agendada ou imediata.
-- Data e horário previstos, no caso dos agendamentos.
+- Data e horário previstos (no caso dos agendamentos).
 - Data e horário de início.
 - Data e horário de encerramento.
-- Cliente.
-- Motorista responsável.
-- Veículo utilizado.
-- Origem e destino.
+- Id Cliente atendido .
+- id Motorista responsável 
+- Veículo utilizado 
+- Alocação ativa no momento do atendimento.
+- Origem (local de embarque) e destino (local de desembarque).
 - Distância percorrida.
-- Status da viagem.
+- Status da viagem (agendada, em andamento, concluída, cancelada).
 - Informações financeiras e de pagamento.
 - Descontos e vouchers aplicados.
 
 #### Ordens de Serviço
 
 - Número identificador.
+- Viagem vinculada.
 - Data e horário.
 - Motorista responsável.
 - Dados do veículo.
@@ -94,7 +113,7 @@ O cadastro inicial deverá solicitar pelo menos nome e telefone.
 - Local de desembarque.
 - Valor da viagem.
 - Tipo de pagamento.
-- Status da viagem.
+- Status da OS (pendente, aceita, em andamento, concluída, cancelada).
 
 #### Informações Financeiras
 
@@ -176,11 +195,9 @@ Como é escolhido o motorista responsável por cada viagem?
 
 Justificativa: definir o papel da fila, da disponibilidade e da proximidade. A seleção do motorista mais próximo é uma hipótese da equipe, ainda não confirmada pelo cliente.
 
-### 2. Vínculo entre Motoristas e Veículos
-
-Como funciona o uso dos veículos pelos motoristas ao longo do tempo?
-
-Justificativa: identificar se os veículos são fixos ou compartilhados e se será necessário manter histórico dos vínculos.
+### 2. Regras de Turno e Vínculo entre Motoristas e Veículos
+Na operação diária, os motoristas trocam de veículo por turno ou mantêm carros fixos, e como o motorista sinaliza no WhatsApp o início/fim do turno ou a mudança para uso pessoal?
+Justificativa: a modelagem via tabela associativa de Alocação e Disponibilidade acomoda ambos os cenários e preserva o histórico, mas os comandos de acionamento via WhatsApp precisam ser alinhados com o cliente.
 
 ### 3. Ciclo da Ordem de Serviço
 
